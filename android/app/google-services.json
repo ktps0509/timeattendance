@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "309370750143",
+    "project_id": "detectattendance",
+    "storage_bucket": "detectattendance.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:309370750143:android:77158ccb8ac8512915720a",
+        "android_client_info": {
+          "package_name": "com.example.timeattendance"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "309370750143-u6v8gor61r3so8plhanrh5564aovao5v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByNblXFx5DY6hmf7LYI5QwmhQk8HSaVP8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "309370750143-u6v8gor61r3so8plhanrh5564aovao5v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
