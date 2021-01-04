@@ -42,11 +42,14 @@ class ListTimeAttendancePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("TimeAttendance"),
         centerTitle: true,
-        backgroundColor: Colors.amberAccent,
+        backgroundColor: Colors.red,
       ),
       body: Container(
         child: StreamBuilder(
-          stream: FirebaseFirestore.instance.collection("employee").orderBy('Position').snapshots(),
+          stream: FirebaseFirestore.instance
+              .collection("employee")
+              .orderBy('Position')
+              .snapshots(),
           builder: (context, snapshot) {
             switch (snapshot.connectionState) {
               case ConnectionState.waiting:

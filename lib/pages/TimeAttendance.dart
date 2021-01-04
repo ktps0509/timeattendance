@@ -180,7 +180,6 @@ class _TimeAttendancePageState extends State<TimeAttendancePage>
     DateFormat dateFormatImg = DateFormat('ddMMyyyy');
     String ImgUrlIn;
 
-
     await takePicture().then((String file) {
       if (mounted) {
         setState(() {
@@ -264,13 +263,13 @@ class _TimeAttendancePageState extends State<TimeAttendancePage>
         .child(dateFormatImg.format(_datetimeNow).toString() + '_checkOut');
     firebase_storage.UploadTask uploadTask = refstore.putFile(File(imgPath));
     firebase_storage.TaskSnapshot taskSnapshot =
-    await uploadTask.whenComplete(() => print('Complete'));
+        await uploadTask.whenComplete(() => print('Complete'));
     print('File Uploaded');
     await refstore.getDownloadURL().then((fileURL) => {
-      setState(() {
-        ImgUrlOut = fileURL;
-      })
-    });
+          setState(() {
+            ImgUrlOut = fileURL;
+          })
+        });
 
     await FirebaseFirestore.instance
         .collection("timeattendance")
