@@ -1,6 +1,13 @@
-# timeattendance
+# TimeAttendanceApp
 
-A new Flutter project.
+DemoApp Flutter
+
+Flutter
+
+Dart
+
+Firebase Cloud FireStore
+
 
 ## Getting Started
 
