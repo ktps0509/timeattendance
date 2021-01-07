@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:timeattendance/pages/DetailAttendance.dart';
 import 'package:timeattendance/pages/TimeAttendance.dart';
 
 class ListTimeAttendancePage extends StatelessWidget {
@@ -14,21 +15,27 @@ class ListTimeAttendancePage extends StatelessWidget {
             backgroundImage: NetworkImage(documents['ImgProfile'])),
         title: Text(documents['FirstName'] + " " + documents['LastName']),
         subtitle: Text("Position : " + documents['Position']),
+        trailing: IconButton(
+            icon: Icon(Icons.add_box),
+            onPressed: () async {
+              WidgetsFlutterBinding.ensureInitialized();
+              // Obtain a list of the available cameras on the device.
+              final cameras = await availableCameras();
+              final firstCamera = cameras.first;
+
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => TimeAttendancePage(
+                        camera: firstCamera,
+                        id: documents.reference.documentID.toString())),
+              );
+            }),
         onTap: () async {
-          WidgetsFlutterBinding.ensureInitialized();
-          // Obtain a list of the available cameras on the device.
-          final cameras = await availableCameras();
-          final firstCamera = cameras.first;
-
-          print('firstCamera');
-          print(firstCamera);
-          // Navigator.of(context).push(_createRoute(firstCamera, documents.reference.documentID.toString()));
-
           Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (context) => TimeAttendancePage(
-                    camera: firstCamera,
+                builder: (context) => DetailAttendancePage(
                     id: documents.reference.documentID.toString())),
           );
         },
